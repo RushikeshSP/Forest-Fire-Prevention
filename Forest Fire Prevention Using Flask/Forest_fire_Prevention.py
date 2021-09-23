@@ -23,10 +23,10 @@ log_reg = LogisticRegression()
 
 log_reg.fit(x_train, y_train)
 
-input = [int(x) for x in "45 32 60".split(' ')]
+# input = [int(x) for x in "45 32 60".split(' ')]
 
-final = [np.array(input)]
-b = log_reg.predict_proba(final)
+# final = [np.array(input)]
+# b = log_reg.predict_proba(final)
 
 pickle.dump(log_reg, open("model.pkl", "wb"))
-model = pickle.load(open("model.pkl", "rb"))
+# model = pickle.load(open("model.pkl", "rb"))

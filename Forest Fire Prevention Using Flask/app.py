@@ -13,12 +13,14 @@ def hello_world():
 
 @app.route('/predict', methods = ['POST', 'GET'])
 def predict():
-    int_features = [int(float('55063.000000')) for x in request.form.values()]
+    int_features = [int(float(x)) for x in request.form.values()]
     final = [np.array(int_features)]
-    print(int_features)
-    print(final)
+    # print(int_features)
+    # print(final)
     prediction = model.predict_proba(final)
-    output = '{0:.{1}f}'.format(prediction[0][0], 2)
+    # print(prediction)
+    output = '{0:.{1}f}'.format(prediction[0][1], 2)
+    # print(output)
 
 
     if output>str(0.5):
